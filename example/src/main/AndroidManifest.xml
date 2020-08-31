@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.felhr.serialportexample">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppBaseTheme.sakhr">
+        <activity android:name=".View.kennlinie"></activity>
+        <activity android:name=".Backend.Kennlinie" />
+        <activity android:name=".View.Add_Account" />
+        <activity android:name=".View.Account_deteils" />
+        <activity android:name=".View.UserDeatils" />
+        <activity android:name=".View.JobsUser" />
+        <activity android:name=".View.Setting" />
+        <activity android:name=".View.JobsDetails" />
+        <activity
+            android:name=".View.JobView"
+            android:label="@string/title_activity_job_view"
+            android:theme="@style/AppBaseTheme.sakhr.NoActionBar" />
+        <activity android:name=".View.DataLoger" />
+        <activity android:name=".View.D_Base" />
+        <activity
+            android:name=".View.MainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Controller.UsbService"
+            android:enabled="true" />
+
+        <provider
+            android:name=".DatenBank.MyDataProvider"
+            android:authorities="com.example.android.infos"
+            android:exported="false" />
+        <provider
+            android:name=".DatenBank.JopDataProvider"
+            android:authorities="com.felhr.serialportexample.jobs"
+            android:exported="false" />
+    </application>
+
+</manifest>
